@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Testing image stack</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+ <link rel="stylesheet" type="text/css" href="stack.css">
+ 
+  
+</head>
+<body>
+<div id="Stack">
+	<div id="photo1" class="photo-stack">
+		<a onclick="spinAndMove('photo1', '1')"><img src="img/example1.jpg"  class="photos" id="1"></a>
+	</div>
+	<div id="photo2" class="photo-stack">
+		<a onclick="spinAndMove('photo2', '2')"><img src="img/example2.jpg"  class="photos" id='2'></a>
+	</div>
+	<div id="photo3" class="photo-stack">
+		<a onclick="spinAndMove('photo3', '3')"><img src="img/example3.jpg"  class="photos" id="3"></a>
+	</div>
+	<div id="photo4" class="photo-stack">
+		<a onclick="spinAndMove('photo4', '4')"><img src="img/example4.jpg"  class="photos" id="4"></a>
+	</div>
+	<div id="photo5" class="photo-stack">
+		<a onclick="spinAndMove('photo5', '5')"><img src="img/example5.jpg"  class="photos" id="5" ></a>
+	</div>
+
+</div>
+
+<script type="text/javascript">
+
+	// Directory and photos to show
+	var directory = "img/";
+	var photos = [
+				"example1.jpg",
+				"example2.jpg",
+				"example3.jpg",
+				"example4.jpg",
+				"example5.jpg",
+				"example6.jpg",
+				"example7.jpg",
+				"example8.jpg",
+        "example9.jpg",
+        "example10.jpg"
+	];
+
+  //document.getElementById("myFrame").onload = function() {myFunction()};
+
+
+	function spinAndMove(locationDiv, locationImg){
+		var elem = document.getElementById(locationDiv);
+  		var img = document.getElementById(locationImg);
+  		// top and left are for the absolute postions that the photo starts at
+  		var top = 300;
+  		var left = 0;
+  		// imgWidth and imgHeight are a percentage of size of the photo
+  		var imgWidth = 100;
+  		var imgHeight = 100;
+  		var id = setInterval(frame, 2);
+  		function frame() {
+    		
+    		if (left == 500) {
+      			// Stops antimation
+      			clearInterval(id);
+    		} else {
+      			top = top - 5;
+      			left = left + 5;
+     			elem.style.top = top + 'px';
+      			elem.style.left = left + 'px';
+      			elem.style.transform = 'rotate(' + left + 'deg)';
+      			// as long as image size is above 1% in size
+      			if(imgWidth > 1){
+      				imgWidth--;
+      				imgHeight--;
+      				img.style.width = imgWidth + 'px';
+      				img.style.height = imgHeight + 'px';
+      			}
+
+    		}
+  		}
+
+	}
+
+</script>
+
+
+</body>
+</html>

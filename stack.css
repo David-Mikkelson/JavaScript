@@ -1,0 +1,136 @@
+
+
+#Stack{
+	/* the location of the Stack*/
+	position: fixed;
+	top: 50px;
+	left: 50px;
+	width: 1000px;
+	height: 500px;
+	z-index: -10;
+	
+}
+
+.photos {
+	/* actual size of each photo */
+	width: 400px;
+	height: 325px;
+	/* Adding the edge */
+    border: white 2px groove;
+    /* Adding the Animation */
+    -webkit-transition: all 0.5s ease;
+     -moz-transition: all 0.5s ease;
+       -o-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+          transition: all 0.2s ease;
+}
+
+
+#photo1 {
+	position: absolute;
+	z-index: 100;
+	top: 300px;
+	border: white 2px groove;
+}
+
+
+
+
+#photo2 {
+	position: absolute;
+	top: 300px;
+	z-index: 110;
+	border: white 2px groove;
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+       -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
+
+#photo3 {
+	position: absolute;
+	top: 300px;
+	z-index: 115;
+	border: white 2px groove;
+  -webkit-transform: rotate(-5deg);
+     -moz-transform: rotate(-5deg);
+       -o-transform: rotate(-5deg);
+      -ms-transform: rotate(-5deg);
+          transform: rotate(-5deg);
+}
+
+#photo4 {
+	position: absolute;
+	top: 300px;
+	z-index: 120;
+	border: white 2px groove;
+  -webkit-transform: rotate(-1deg);
+     -moz-transform: rotate(-1deg);
+       -o-transform: rotate(-1deg);
+      -ms-transform: rotate(-1deg);
+          transform: rotate(-1deg);
+}
+
+#photo5 {
+	position: absolute;
+	top: 300px;
+	left: 0px;
+	z-index: 125;
+  -webkit-transform: rotate(5deg);
+     -moz-transform: rotate(5deg);
+       -o-transform: rotate(5deg);
+      -ms-transform: rotate(5deg);
+          transform: rotate(5deg);
+  
+}
+
+
+
+#photo6 {
+	position: absolute;
+	top: 300px;
+	z-index: 130;
+	border: white 2px groove;
+  -webkit-transform: rotate(8deg);
+     -moz-transform: rotate(8deg);
+       -o-transform: rotate(8deg);
+      -ms-transform: rotate(8deg);
+          transform: rotate(8deg);
+}
+
+#photo7 {
+	position: absolute;
+	top: 5px;
+	z-index: 135;
+	border: white 2px groove;
+  -webkit-transform: rotate(10deg);
+     -moz-transform: rotate(10deg);
+       -o-transform: rotate(10deg);
+      -ms-transform: rotate(10deg);
+          transform: rotate(10deg);
+}
+
+#photo8 {
+	position: absolute;
+	top: 5px;
+	z-index: 140;
+	border: white 2px groove;
+  -webkit-transform: rotate(13deg);
+     -moz-transform: rotate(13deg);
+       -o-transform: rotate(13deg);
+      -ms-transform: rotate(13deg);
+          transform: rotate(13deg);
+}
+
+#photo9 {
+	position: absolute;
+	top: 5px;
+	z-index: 145;
+	border: white 2px groove;
+  -webkit-transform: rotate(-10deg);
+     -moz-transform: rotate(-10deg);
+       -o-transform: rotate(-10deg);
+      -ms-transform: rotate(-10deg);
+          transform: rotate(-10deg);
+}
