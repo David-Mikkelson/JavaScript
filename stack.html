@@ -11,25 +11,11 @@
  
   
 </head>
-<body>
+<body onload="insertPictures()">
 <div id="Stack">
-	<div id="photo1" class="photo-stack">
-		<a onclick="spinAndMove('photo1', '1')"><img src="img/example1.jpg"  class="photos" id="1"></a>
-	</div>
-	<div id="photo2" class="photo-stack">
-		<a onclick="spinAndMove('photo2', '2')"><img src="img/example2.jpg"  class="photos" id='2'></a>
-	</div>
-	<div id="photo3" class="photo-stack">
-		<a onclick="spinAndMove('photo3', '3')"><img src="img/example3.jpg"  class="photos" id="3"></a>
-	</div>
-	<div id="photo4" class="photo-stack">
-		<a onclick="spinAndMove('photo4', '4')"><img src="img/example4.jpg"  class="photos" id="4"></a>
-	</div>
-	<div id="photo5" class="photo-stack">
-		<a onclick="spinAndMove('photo5', '5')"><img src="img/example5.jpg"  class="photos" id="5" ></a>
-	</div>
-
+	
 </div>
+
 
 <script type="text/javascript">
 
@@ -47,9 +33,34 @@
         "example9.jpg",
         "example10.jpg"
 	];
+  
+  //<div id="photo5" class="photo-stack">
+  //  <a onclick="spinAndMove('photo5', '5')"><img src="img/example5.jpg"  class="photos" id="5" ></a>
+  //</div>
+  function insertPictures(){
+    var index = 0;
+    while(photos[index]){
+      var div = document.createElement('div');
+      index++;
+      var divId = "photo" + index;
+      div.className = "photo-stack";
+      div.setAttribute("id", divId);
+      div.innerHTML =  '<a onclick="spinAndMove(' + "'" +
+                        divId + "'" +
+                  ", '" +
+                  index + "'" +
+                  ')"><img src="' +
+                  directory + 
+                  photos[index -1] +
+                  '" class="photos" id="' +
+                  index +
+                  '"></a>';
+      document.getElementById('Stack').appendChild(div);
+     
 
-  //document.getElementById("myFrame").onload = function() {myFunction()};
+    }
 
+  }
 
 	function spinAndMove(locationDiv, locationImg){
 		var elem = document.getElementById(locationDiv);
@@ -61,7 +72,7 @@
   		var imgWidth = 100;
   		var imgHeight = 100;
   		var id = setInterval(frame, 2);
-  		function frame() {
+      function frame() {
     		
     		if (left == 500) {
       			// Stops antimation
