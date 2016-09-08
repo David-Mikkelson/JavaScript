@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Testing image stack</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+  <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+  <script type = "text/javascript" src = "http://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>		
+  <script type = "text/javascript" src = "https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+		
+<script type="text/javascript">
+	$(document).ready(function() {
+
+            $("#Quake").click(function(){
+               //$(".pics").effect( "shake", {times:4}, 1000 );
+               $(".set1").effect( "shake", {times:4}, 1000 ).queue(function(){
+               		$(this).addClass("hinge");
+               });
+               $(".set2").effect( "shake", {times:5}, 1000 ).queue(function(){
+               		$(this).addClass("hinge");
+               });
+               $(".set3").effect( "shake", {times:3}, 900 ).queue(function(){
+               		$(this).addClass("hinge");
+               	});
+               $(".set4").effect( "shake", {times:6}, 1100 ).queue(function(){
+               		$(this).addClass("hinge");
+               });
+               $(".set5").effect( "shake", {times:5}, 1000 ).queue(function(){
+               		$(this).addClass("hinge");
+               });
+               $(".set6").effect( "shake", {times:2}, 800 ).queue(function(){
+               		$(this).addClass("hinge");
+               });
+               setTimeout(function(){
+               		$(".images").css("display", "none");
+               		$(".ending").css("display", "block");
+
+				},2750); 
+            });
+			
+			
+	});
+	
+</script>
+ 
+  
+</head>
+<body>
+<style>
+	.pics {
+		width: 300px;
+		height: 225px;
+		
+	}
+
+	.images {
+		align-items: center;
+		margin-top:  20px;
+	}
+
+	@keyframes hinge {
+	0% { transform: rotate(0); transform-origin: top left; animation-timing-function: ease-in-out; }	
+	20%, 60% { transform: rotate(80deg); transform-origin: top left; animation-timing-function: ease-in-out; }	
+	40% { transform: rotate(60deg); transform-origin: top left; animation-timing-function: ease-in-out; }	
+	80% { transform: rotate(60deg) translateY(0); opacity: 1; transform-origin: top left; animation-timing-function: ease-in-out; }	
+	100% { transform: translateY(700px); opacity: 0; }
+}
+
+.hinge {
+  animation-duration: 2s;
+	animation-name: hinge;
+}
+.ending{
+	display: none;
+}
+
+#Quake{
+	margin: 30px 20px 20px 25px;
+}
+</style>
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-md-4">
+				<button id="Quake">Create an Earthquake</button>
+			</div>
+
+		</div>
+			<div class="col-md-4 images"> 
+				<img class="pics img-rounded set1" src="img/Example1.jpg">
+			</div>
+			<div class="col-md-4 images"> 
+				<img class="pics img-rounded set2" src="img/Example2.jpg">
+			</div>
+			<div class="col-md-4 images"> 
+				<img class="pics img-rounded set3" src="img/Example3.jpg">
+			</div>
+			
+			<div class="col-md-4 images"> 
+				<img class="pics img-rounded set4" src="img/Example4.jpg">
+			</div>
+			<div class="col-md-4 images"> 
+				<img class="pics img-rounded set5" src="img/Example5.jpg">
+			</div>
+			<div class="col-md-4 images"> 
+				<img class="pics img-rounded set6" src="img/Example6.jpg">
+			</div>
+			
+			<div class="col-md-12 ending">
+				<h1 align="center">Why would you do such a thing?</h1>
+			</div>
+
+			<div class="col-md-12">
+				<sup>Hinge effect created by Dmitry Semenov</sup>
+			</div>
+		
+	</div>
+
+</body>
+</html>
